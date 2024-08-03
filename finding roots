@@ -1,0 +1,18 @@
+import java.util.Scanner;
+class Quadraticequation
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+      Double a,b,c,root1,root2;
+         a=sc.nextDouble();
+         b=sc.nextDouble();
+         c=sc.nextDouble();
+         double d=Math.sqrt((b*b)-(4*a*c));
+          root1=(-b+d)/2*a;
+          root2=(-b-d)/2*a;
+       System.out.println("required First root:"+root1);
+System.out.println("required second root:"+root2);
+}
+
+}
