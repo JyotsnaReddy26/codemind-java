@@ -1,0 +1,9 @@
+public class Areaofcircle {
+    public static void main(String args[])
+    {
+        Double radius=Double.parseDouble(args[0]);
+        Double area=3.14*radius*radius;
+        System.out.printf("required area of circle is:%.2f",area);
+    }
+    
+}
