@@ -1,0 +1,11 @@
+class Codechef
+{
+	public static void main (String[] args)
+	{
+	    int length = 11;
+	   length %=3;
+	   System.out.println(length);
+	   // Update your code below this line
+		
+	}
+}
