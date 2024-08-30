@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class pgm
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String k=sc.nextLine();
+        int decimal=Integer.parseInt(k,8);
+        System.out.println(decimal);
+    }
+}
