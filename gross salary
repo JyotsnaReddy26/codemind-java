@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Gross
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        double BS,HRA,DA,PF,GS;
+        BS=sc.nextDouble();
+        HRA=sc.nextDouble();
+        DA=sc.nextDouble();
+         PF=BS*0.12;
+         GS=BS+HRA+DA+PF;
+        System.out.printf("%.2f\n",PF);
+        System.out.printf("%.2f",GS);
+    }
+}
