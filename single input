@@ -1,0 +1,6 @@
+t = int(input())       
+
+for i in range(t):     
+    A, B = map(int, input().split())      
+    C, D, E = map(int, input().split())
+    print(A, B, C, D, E)
