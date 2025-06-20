@@ -1,0 +1,41 @@
+class Solution(object):
+    def maxDistance(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        # Current net x and y
+        x = y = 0
+        
+        # Count of harmful moves so far for each direction pair
+        east = west = north = south = 0
+        
+        max_distance = 0
+        
+        for c in s:
+            if c == 'N':
+                y += 1
+                north += 1
+            elif c == 'S':
+                y -= 1
+                south += 1
+            elif c == 'E':
+                x += 1
+                east += 1
+            elif c == 'W':
+                x -= 1
+                west += 1
+            
+            # For current prefix, consider:
+            # Best possible net x: 
+            # flip all harmful moves if possible, up to k
+            flips_x = min(west if x >= 0 else east, k)
+            flips_y = min(south if y >= 0 else north, k - flips_x)
+            
+            max_x = abs(x) + 2 * flips_x
+            max_y = abs(y) + 2 * flips_y
+            
+            max_distance = max(max_distance, max_x + max_y)
+        
+        return max_distance
