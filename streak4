@@ -1,0 +1,29 @@
+class Solution(object):
+    def minimumDeletions(self, word, k):
+        """
+        :type word: str
+        :type k: int
+        :rtype: int
+        """
+        from collections import Counter
+
+        # Count frequencies of each character
+        freq = Counter(word)
+        freqs = sorted(freq.values())  # sort frequencies
+
+        n = len(freqs)
+        ans = float('inf')
+
+        # Try all possible target min frequencies
+        for i in range(n):
+            # Assume freqs[i] is the minimum frequency to keep
+            min_freq = freqs[i]
+            deletions = 0
+            for f in freqs:
+                if f < min_freq:
+                    deletions += f  # remove all of this char
+                elif f > min_freq + k:
+                    deletions += f - (min_freq + k)  # reduce this to min_freq + k
+            ans = min(ans, deletions)
+
+        return ans
