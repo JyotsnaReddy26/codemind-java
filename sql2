@@ -1,0 +1,2 @@
+insert into employees(emp_id,emp_name,department,salary)values(7,'Frank Green','HR',55000);
+select emp_name from employees;
